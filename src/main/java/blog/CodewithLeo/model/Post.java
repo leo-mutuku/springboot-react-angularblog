@@ -2,6 +2,7 @@ package blog.CodewithLeo.model;
 
 import jakarta.annotation.Nonnull;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 
 import java.time.Instant;
 
@@ -12,8 +13,11 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column
+    @NotBlank
     private String title;
+    @Lob
     @Column
+    @NotBlank
     private String content;
     @Column
     private Instant createdOn;
